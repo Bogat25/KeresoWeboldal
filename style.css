@@ -1,0 +1,26 @@
+body{
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNSI+CjxyZWN0IHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgZmlsbD0iIzI4MjgyOCI+PC9yZWN0Pgo8Y2lyY2xlIGN4PSIzIiBjeT0iNC4zIiByPSIxLjgiIGZpbGw9IiMzOTM5MzkiPjwvY2lyY2xlPgo8Y2lyY2xlIGN4PSIzIiBjeT0iMyIgcj0iMS44IiBmaWxsPSJibGFjayI+PC9jaXJjbGU+CjxjaXJjbGUgY3g9IjEwLjUiIGN5PSIxMi41IiByPSIxLjgiIGZpbGw9IiMzOTM5MzkiPjwvY2lyY2xlPgo8Y2lyY2xlIGN4PSIxMC41IiBjeT0iMTEuMyIgcj0iMS44IiBmaWxsPSJibGFjayI+PC9jaXJjbGU+Cjwvc3ZnPg==");
+    color: white;
+}
+
+.navbar-background{
+background-color:rgb(164, 165, 165);
+}
+.navbar-background_2{
+background-color: rgb(83, 87, 92);
+}
+.main-content{
+
+}
+.navbar-modositas {
+    margin: 5px;
+    padding: 0px; 
+    border: 5px solid rgb(2, 8, 32);
+    border-radius: 5%;
+  }
+  .footer-modositas{
+    color: white;
+  }
+  .igazitas-jobbra{
+    text-align: right;
+  }
