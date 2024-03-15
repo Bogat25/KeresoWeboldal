@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row" id="cardHolder">
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card mb-3">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card 1</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <!-- Repeat the following block for each card -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card mb-3">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card 2</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <!-- End repeat block -->
+      <!-- Repeat the block above for each of the remaining 8 cards -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card mb-3">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card 10</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <!-- End repeat block -->
+    </div>
+  </div>
+  
+
+  cardHolderDiv.innerHTML =
+    cardHolderDiv.innerHTML +
+    '<div class="col-lg-3 col-md-4 col-sm-6">' +
+    '<div class="card mb-3">' +
+    '<img class="card-img-top" src="..." alt="Card image cap">' +
+    '<div class="card-body">' +
+    '<h5 class="card-title">Card 10</h5>' +
+    '<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card\'s content.</p>' +
+    '<a href="#" class="btn btn-primary">Go somewhere</a>' +
+    "</div>" +
+    "</div>" +
+    "</div>";

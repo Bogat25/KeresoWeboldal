@@ -1,36 +1,42 @@
 function keresesKeresoSzora() {
-  // létrehozunk egy XMLHTTPRequest objektumot
   var keresoSzo = document.getElementById("keresettSzoInput").value;
-
-
   var xhr = new XMLHttpRequest();
-
-  // beállítjuk a kérést az adatok URL-jére
-  xhr.open("GET", "https://api.tvmaze.com/singlesearch/shows?q=" + keresoSzo, true);
-  console.log("https://api.tvmaze.com/singlesearch/shows?q=" + keresoSzo);
-
-  // beállítjuk a válasz típusát JSON-ra
+  xhr.open(
+    "GET",
+    "https://api.tvmaze.com/singlesearch/shows?q=" + keresoSzo,
+    true
+  );
   xhr.responseType = "json";
-
-  // itt definiáljuk, hogy mi történjen, amikor a kérés sikeresen befejeződött
   xhr.onload = function () {
-    // Ellenőrizzük, hogy a kérés állapota sikeres volt-e (HTTP státusz kód 200)
     if (xhr.status === 200) {
-      // A válasz a xhr.response tulajdonságban található JSON objektumként
       var responseData = xhr.response;
-      // Most itt tudsz dolgozni a kapott adatokkal
       console.log(responseData);
+      cardCreate(responseData); //meghívom a kartya
     } else {
-      // Ha a kérés sikertelen volt, kiírjuk a hibát a konzolra
       console.error("Eror: " + xhr.status);
     }
   };
-
-  // Ha hiba történik a kérés során
   xhr.onerror = function () {
-    console.error("Hiba történt a kérés során.");
+    console.error("Error, probably with the url.");
+    console.log(keresoSzo);
   };
-
-  // Elküldjük a kérést
   xhr.send();
+}
+
+function cardCreate(responseData) {
+  var cardHolderDiv = document.getElementById("cardHolder");
+  cardHolderDiv.innerHTML = cardHolderDiv.innerHTML + responseData.id;
+  cardHolderDiv.innerHTML =
+    cardHolderDiv.innerHTML +
+    '<div class="col-lg-3 col-md-4 col-sm-6">' +
+    '<div class="card mb-3">' +
+    '<img class="card-img-top" src="..." alt="Card image cap">' +
+    '<div class="card-body">' +
+    '<h5 class="card-title">Card 10</h5>' +
+    '<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card\'s content.</p>' +
+    '<a href="#" class="btn btn-primary">Go somewhere</a>' +
+    "</div>" +
+    "</div>" +
+    "</div>";
+    
 }
