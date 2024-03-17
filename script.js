@@ -31,24 +31,22 @@ function cardCreate(responseData) {
 
   for (var i = 0; i < responseData.length; i++) {
     var showData = responseData[i];
+    var summary = showData.show.summary ? truncateSummary(showData.show.summary) : "";
 
-    // Kártya létrehozása
-    var card = document.createElement("div");
+  
+    var card = document.createElement("div"); //bootstrappel jobban nem ki...
     card.classList.add("col-lg-3", "col-md-4", "col-sm-6");
     card.innerHTML =
       '<div class="card mb-3">' +
       '<img class="card-img-top img-small" src="' +
-      (showData.show.image ? showData.show.image.medium : "") +
-      '" alt="' +
+      (showData.show.image ? showData.show.image.medium : "hiba") +
+      '" alt="' + //bealítjuk hogy a kepleiras megegyezen cimel
       showData.show.name +
       '">' +
       '<div class="card-body">' +
       '<h5 class="card-title">' +
       showData.show.name +
       "</h5>" +
-      '<p class="card-text">' +
-      (showData.show.summary ? truncateSummary(showData.show.summary) : "") +
-      "</p>" +
       '<p class="card-text"><b>IMDB ID:</b> ' +
       showData.show.externals.imdb +
       "</p>" +
@@ -64,21 +62,21 @@ function cardCreate(responseData) {
       '<p class="card-text"><b>Állapot:</b> ' +
       showData.show.status +
       "</p>" +
-      "</div>" + // Itt zárul a card-body div
-      '<div class="card-footer">' +
-      (showData.show.summary ? truncateSummary(showData.show.summary) : "") + // Összefoglaló a kártya alján
+      "</div>" + 
+      '<div class="card-footer">' + //footerben lesz fölötte egy csík, csak esztetikailag szamít, e nelkül is megfeleloen írna ki
       "</div>" +
       "</div>";
-    // A kártya hozzáadása a tartóhoz
+    var cardFooter = card.querySelector(".card-footer");
+    cardFooter.innerHTML = summary;
     cardHolderDiv.appendChild(card);
-}
+  }
 }
 
-  // Függvény az összefoglaló levágására, ha hosszabb, mint 200 karakter
-  function truncateSummary(summary) {
-    if (summary.length > 200) {
-      return summary.substring(0, 197) + '...'; //nem tudom hogy itt a 200 as limitbe beleszámít e a ... így a biztonság kedvéért úgy vettem hogy beleszámít
-    } else {
-      return summary;
-    }
+function truncateSummary(summary) {
+  if (summary.length > 200) {
+    return summary.substring(0, 197) + "..."; //mivel nincs meghatarozva hogy a 3 pont beleszamit e az osszefoglaloba úgy tekintek ra mintha beleszamitana
+  } else {
+    return summary;
   }
+}
+
