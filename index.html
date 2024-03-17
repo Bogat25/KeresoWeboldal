@@ -17,6 +17,7 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-modositas">
           <div class="container-fluid navbar-background">
             <a class="navbar-brand" href>Én Kicsi FilmKlubom</a>
+            
             <button class="navbar-toggler" type="button"
               data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
               aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -48,8 +49,14 @@
                       id="keresettSzoInput"
                       placeholder="...">
                     </div>
+                    <p></p>
+                    <select class="form-select" id="keresesTipus">
+                      <option value="1">Szora valo kereses</option>
+                      <option value="2">Szereplore valo kereses</option>
+                      <option value="3">Filmre/Sorozatra valo kereses</option>
+                    </select>
                     <p id="talalatok"></p>
-                  <button type="button" onclick="keresesKeresoSzora()"
+                  <button type="button" onclick="keresestipusKivalasztasa()"
                     class="btn btn-primary">Kereses</button>
                 </form>
 

@@ -21,7 +21,7 @@ body {
 .igazitas-jobbra {
   text-align: right;
 }
-.img-small {
+.img-small { /*Itt nem feltetlenul felel meg a feladat leirasanak de amennyiben fixen megadom neki a meretet elviselhetetlenul torz lenne így emelett dontottem*/
   max-width: 50px;
   max-height: 150px;
   width: auto;

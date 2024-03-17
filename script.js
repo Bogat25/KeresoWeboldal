@@ -1,3 +1,21 @@
+function keresestipusKivalasztasa(){
+  var selectElem = document.getElementById("keresesTipus");
+  var selectedValue = selectElem.value;
+  if(selectedValue == 1){
+    keresesKeresoSzora()
+  }else if(selectedValue == 2){
+    keresesSzereplore();
+  } else{
+
+  }
+}
+
+function keresesSzereplore(){
+  console.log("Szereplore valo kereses.");
+}
+function keresesFilmre(){
+  console.log("Filmre  valo kereses.");
+} 
 function keresesKeresoSzora() {
   var keresoSzo = document.getElementById("keresettSzoInput").value;
   var xhr = new XMLHttpRequest();
@@ -7,7 +25,6 @@ function keresesKeresoSzora() {
   xhr.onload = function () {
     if (xhr.status === 200) {
       var responseData = xhr.response;
-      console.log(responseData);
       responseLenghtCreate(responseData.length);
       cardCreate(responseData); //meghívom a kartyakat
     } else {
